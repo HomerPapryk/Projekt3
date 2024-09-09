@@ -1,0 +1,319 @@
+/* Body and Container Styling */
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(145deg, #8645ac, #2a2d35, #333);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+}
+.container {
+  background-color: #1c1e26;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 400px;
+}
+.select-input {
+  display: flex;
+  align-items: center;
+  width: 92%;
+  padding: 0 15px;
+  border: 1px solid #999;
+  height: 40px;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.select-input img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.select-input select {
+  width: 100%;
+  background-color: #1c1e26;
+  border: none;
+  color: white;
+  font-size: 1rem;
+}
+
+select:focus {
+  outline: none;
+}
+
+.select-container:focus-within {
+  outline: none;
+}
+
+select {
+  box-shadow: none;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+/* Input and Label Styling */
+label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+  font-size: 0.9rem;
+}
+
+.amount {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 5px;
+  background: none;
+  border: 1px solid #999;
+  color: white;
+  font-size: 1rem;
+}
+
+.currency {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+}
+
+/* Exchange Rate Info */
+.rate-info {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  margin-top: 30px;
+  min-height: 24px;
+  text-align: center;
+}
+
+.getting-rate {
+  font-style: italic;
+  font-size: 16px;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blinking {
+  animation: blink 1s infinite;
+}
+/* Button Exchange */
+.button-pay {
+  --button-default-opacity: 1;
+  --button-done-opacity: 0;
+  --button-money-x: 125%;
+  --button-money-scale: 1;
+  --button-money-opacity: 0;
+  --button-money-shine-position: 132px;
+  --button-money-dollar-y: -35%;
+  --button-money-dollar-rotate: 10deg;
+  --button-money-dollar-scale: 0.7;
+
+  appearance: none;
+  border: none;
+  background-color: #394c50;
+  color: #fff;
+  border-radius: 9px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  position: relative;
+  min-width: 120px;
+  text-align: center;
+  transform: translateZ(0);
+  transition: background 2s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-pay:hover {
+  background-color: #324347;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+  background: #784297;
+}
+
+.button-pay:active {
+  transform: scale(0.985, 0.97) translateZ(0);
+}
+
+.button-pay span {
+  display: block;
+  transform: translateZ(0);
+}
+
+.button-pay span:not(.default) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 12px;
+}
+
+.button-pay span.default {
+  opacity: var(--button-default-opacity);
+}
+
+.button-pay span.done {
+  opacity: var(--button-done-opacity);
+}
+
+.button-pay .money {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  opacity: var(--button-money-opacity);
+  transform: translate(var(--button-money-x), -50%)
+    scale(var(--button-money-scale)) translateZ(0);
+}
+
+.button-pay .money .shine {
+  position: absolute;
+  left: 1px;
+  top: 6px;
+  right: 1px;
+  bottom: 6px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    transparent 0,
+    rgba(255, 255, 255, 0.15) 15%,
+    transparent 30%
+  );
+  background-size: 80px 32px;
+  background-position: var(--button-money-shine-position);
+}
+
+.button-pay .money svg {
+  display: block;
+  width: 52px;
+  height: 42px;
+}
+
+/* social container */
+.social-icons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+/* social icons */
+.social-icons {
+  display: flex;
+  gap: 25px;
+}
+
+.social-icons a {
+  font-size: 60px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* hover social icons */
+.social-icon.github:hover {
+  color: #0a0a0a;
+}
+
+.social-icon.codepen:hover {
+  color: #000;
+}
+
+.social-icon.facebook:hover {
+  color: #1877f2;
+}
+
+.social-icon.instagram:hover {
+  color: #e1306c;
+}
+
+/* mobile */
+
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  label {
+    font-size: 0.8rem;
+  }
+
+  .amount,
+  .currency {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .button-pay {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .social-icons a {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 80%;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  label {
+    font-size: 0.7rem;
+  }
+
+  .amount,
+  .currency {
+    font-size: 0.8rem;
+    padding: 7px;
+  }
+
+  .button-pay {
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+
+  .social-icons a {
+    font-size: 30px;
+  }
+}
